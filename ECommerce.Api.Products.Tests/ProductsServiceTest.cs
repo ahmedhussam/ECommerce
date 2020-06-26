@@ -15,7 +15,7 @@ namespace ECommerce.Api.Products.Tests
         [Fact]
         public async Task GetProductReturnsAProductUsingAValidId()
         {
-            var options = new DbContextOptionsBuilder<ProductsDbContext>().UseInMemoryDatabase(nameof(GetProductsReturnsAllProducts)).Options;
+            var options = new DbContextOptionsBuilder<ProductsDbContext>().UseInMemoryDatabase(nameof(GetProductReturnsAProductUsingAValidId)).Options;
             var dbContext = new ProductsDbContext(options);
             CreateProducts(dbContext);
             var productProfile = new ProductProfile();
