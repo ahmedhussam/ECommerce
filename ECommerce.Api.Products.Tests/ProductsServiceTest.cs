@@ -5,6 +5,7 @@ using ECommerce.Api.Products.Providers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -44,7 +45,7 @@ namespace ECommerce.Api.Products.Tests
             var product = await productsProvider.GetProductsAsync();
 
             Assert.True(product.IsSuccess);
-            Assert.True(product.Products.Any());
+            Assert.True(product.Products.Any<Models.Product>());
             Assert.Null(product.ErrorMessage);
         }
 
